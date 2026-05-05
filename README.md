@@ -1,1 +1,412 @@
-# rabu-coba
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelompok Tani Ranu Makmur</title>
+    <!-- Tailwind CSS untuk Styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .hero-overlay {
+            background: linear-gradient(to right, rgba(20, 83, 45, 0.9), rgba(20, 83, 45, 0.4));
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 antialiased bg-gray-50">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <div class="w-10 h-10 bg-brand-600 rounded-lg flex items-center justify-center text-white">
+                        <i data-lucide="leaf"></i>
+                    </div>
+                    <span class="font-serif font-bold text-xl text-brand-900">Ranu Makmur</span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#profil" class="text-gray-600 hover:text-brand-600 font-medium transition-colors">Profil</a>
+                    <a href="#potensi" class="text-gray-600 hover:text-brand-600 font-medium transition-colors">Potensi Kami</a>
+                    <a href="#usaha" class="text-gray-600 hover:text-brand-600 font-medium transition-colors">Produk & Usaha</a>
+                    <a href="#kontak" class="text-gray-600 hover:text-brand-600 font-medium transition-colors">Kontak</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-brand-600 focus:outline-none">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#profil" class="block px-3 py-2 text-gray-600 hover:text-brand-600 hover:bg-brand-50 rounded-md font-medium">Profil</a>
+                <a href="#potensi" class="block px-3 py-2 text-gray-600 hover:text-brand-600 hover:bg-brand-50 rounded-md font-medium">Potensi Kami</a>
+                <a href="#usaha" class="block px-3 py-2 text-gray-600 hover:text-brand-600 hover:bg-brand-50 rounded-md font-medium">Produk & Usaha</a>
+                <a href="#kontak" class="block px-3 py-2 text-gray-600 hover:text-brand-600 hover:bg-brand-50 rounded-md font-medium">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center">
+        <!-- Background Image -->
+        <div class="absolute inset-0 w-full h-full">
+            <img src="https://images.unsplash.com/photo-1595841696677-6489ff3f8cd1?auto=format&fit=crop&w=1920&q=80" alt="Sawah Pertanian" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16">
+            <span class="inline-block py-1 px-3 rounded-full bg-brand-500/20 border border-brand-400/50 text-brand-100 text-sm font-semibold tracking-wider mb-4 uppercase backdrop-blur-sm">
+                Desa Ranu Wurung, Gading, Probolinggo
+            </span>
+            <h1 class="text-4xl md:text-6xl font-serif font-bold text-white mb-6 leading-tight">
+                Memajukan Pertanian,<br>Menyejahterakan Petani
+            </h1>
+            <p class="text-lg md:text-xl text-brand-50 mb-10 max-w-2xl mx-auto">
+                Kelompok Tani Ranu Makmur berdedikasi menghasilkan komoditas pertanian berkualitas tinggi dengan metode ramah lingkungan untuk masa depan pangan yang lebih baik.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#usaha" class="px-8 py-4 bg-brand-600 hover:bg-brand-500 text-white rounded-xl font-semibold transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
+                    Lihat Produk Kami
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+                <a href="#kontak" class="px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/30 text-white backdrop-blur-sm rounded-xl font-semibold transition-all flex items-center justify-center gap-2">
+                    Hubungi Kami
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profil Section -->
+    <section id="profil" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=800&q=80" alt="Petani Sedang Bekerja" class="rounded-2xl shadow-2xl z-10 relative">
+                    <div class="absolute -bottom-6 -right-6 w-48 h-48 bg-brand-100 rounded-2xl -z-10"></div>
+                    <div class="absolute -top-6 -left-6 w-32 h-32 bg-yellow-100 rounded-full -z-10"></div>
+                </div>
+                <div>
+                    <h2 class="text-brand-600 font-bold tracking-wide uppercase text-sm mb-2">Tentang Kami</h2>
+                    <h3 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-6">Bersama Mengolah Alam, Mewujudkan Kemandirian</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Berdiri sejak tahun 2015, <strong>Kelompok Tani Ranu Makmur</strong> beranggotakan lebih dari 50 petani lokal. Kami tidak hanya berfokus pada hasil panen yang melimpah, tetapi juga pada keberlanjutan ekosistem tanah dan kesejahteraan anggota.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-brand-50 flex items-center justify-center flex-shrink-0 text-brand-600">
+                                <i data-lucide="target"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-gray-900">Visi</h4>
+                                <p class="text-gray-600">Menjadi kelompok tani mandiri yang menghasilkan produk pertanian organik unggulan berskala nasional.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-brand-50 flex items-center justify-center flex-shrink-0 text-brand-600">
+                                <i data-lucide="users"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-gray-900">Misi</h4>
+                                <p class="text-gray-600">Meningkatkan kapasitas SDM petani, menerapkan teknologi tepat guna, dan membangun jaringan kemitraan yang kuat.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Potensi Section -->
+    <section id="potensi" class="py-24 bg-brand-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-brand-600 font-bold tracking-wide uppercase text-sm mb-2">Kekuatan Kami</h2>
+                <h3 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-4">Potensi Pertanian Terpadu</h3>
+                <p class="text-gray-600 text-lg">Dengan luas lahan garapan mencapai 50 hektar, kami mengoptimalkan berbagai komoditas pertanian untuk menjaga ketahanan pangan.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Potensi 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-shadow border border-gray-100 group">
+                    <div class="w-16 h-16 rounded-xl bg-brand-100 flex items-center justify-center text-brand-600 mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                        <i data-lucide="wheat" class="w-8 h-8"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Padi Berkualitas</h4>
+                    <p class="text-gray-600">Lahan persawahan irigasi teknis yang menghasilkan padi varietas unggul dengan sistem tanam jajar legowo.</p>
+                </div>
+
+                <!-- Potensi 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-shadow border border-gray-100 group">
+                    <div class="w-16 h-16 rounded-xl bg-brand-100 flex items-center justify-center text-brand-600 mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                        <i data-lucide="sprout" class="w-8 h-8"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Hortikultura Organik</h4>
+                    <p class="text-gray-600">Pengembangan sayuran dataran rendah dan menengah menggunakan pupuk organik buatan kelompok sendiri.</p>
+                </div>
+
+                <!-- Potensi 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-shadow border border-gray-100 group">
+                    <div class="w-16 h-16 rounded-xl bg-brand-100 flex items-center justify-center text-brand-600 mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                        <i data-lucide="trees" class="w-8 h-8"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Perkebunan Buah</h4>
+                    <p class="text-gray-600">Budidaya buah tropis seperti mangga, alpukat, dan pepaya california untuk mensuplai pasar lokal dan regional.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Usaha & Produk Section -->
+    <section id="usaha" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div class="max-w-2xl">
+                    <h2 class="text-brand-600 font-bold tracking-wide uppercase text-sm mb-2">Etalase Kelompok</h2>
+                    <h3 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-4">Produk & Usaha Tani</h3>
+                    <p class="text-gray-600">Kami tidak hanya memproduksi bahan mentah, tetapi juga melakukan inovasi pasca panen untuk meningkatkan nilai tambah bagi para petani.</p>
+                </div>
+                <a href="#kontak" class="hidden md:inline-flex items-center gap-2 text-brand-600 font-semibold hover:text-brand-700">
+                    Pesan Sekarang <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Produk 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 hover:-translate-y-1 transition-transform">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80" alt="Beras Kemasan" class="w-full h-full object-cover">
+                        <span class="absolute top-4 right-4 bg-white px-2 py-1 rounded text-xs font-bold text-brand-600 shadow">Tersedia</span>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-lg font-bold text-gray-900 mb-2">Beras Premium "Ranu"</h4>
+                        <p class="text-gray-500 text-sm mb-4">Beras putih pulen tanpa pemutih dan pengawet. Kemasan 5kg dan 10kg.</p>
+                        <div class="font-bold text-brand-700">Mulai Rp 65.000</div>
+                    </div>
+                </div>
+
+                <!-- Produk 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 hover:-translate-y-1 transition-transform">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1605335955683-93665bc839d3?auto=format&fit=crop&w=600&q=80" alt="Sayuran Segar" class="w-full h-full object-cover">
+                        <span class="absolute top-4 right-4 bg-white px-2 py-1 rounded text-xs font-bold text-brand-600 shadow">Pre-Order</span>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-lg font-bold text-gray-900 mb-2">Paket Sayur Organik</h4>
+                        <p class="text-gray-500 text-sm mb-4">Paket sayuran segar petik langsung dari kebun. Bayam, kangkung, sawi.</p>
+                        <div class="font-bold text-brand-700">Rp 25.000 / paket</div>
+                    </div>
+                </div>
+
+                <!-- Produk 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 hover:-translate-y-1 transition-transform">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?auto=format&fit=crop&w=600&q=80" alt="Pupuk Kompos" class="w-full h-full object-cover">
+                        <span class="absolute top-4 right-4 bg-white px-2 py-1 rounded text-xs font-bold text-brand-600 shadow">Tersedia</span>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-lg font-bold text-gray-900 mb-2">Pupuk Kompos Tani</h4>
+                        <p class="text-gray-500 text-sm mb-4">Hasil fermentasi kotoran ternak dan limbah pertanian. Sangat subur.</p>
+                        <div class="font-bold text-brand-700">Rp 15.000 / karung</div>
+                    </div>
+                </div>
+
+                <!-- Produk 4 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 hover:-translate-y-1 transition-transform">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1592424090001-f254f3b7ceec?auto=format&fit=crop&w=600&q=80" alt="Bibit Tanaman" class="w-full h-full object-cover">
+                        <span class="absolute top-4 right-4 bg-white px-2 py-1 rounded text-xs font-bold text-brand-600 shadow">Tersedia</span>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-lg font-bold text-gray-900 mb-2">Bibit Tanaman Unggul</h4>
+                        <p class="text-gray-500 text-sm mb-4">Sedia bibit alpukat aligator, mangga gadung, dan durian musang king.</p>
+                        <div class="font-bold text-brand-700">Mulai Rp 35.000</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action / Kemitraan -->
+    <section class="py-20 bg-brand-900 relative overflow-hidden">
+        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-brand-800 rounded-full opacity-50 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-brand-700 rounded-full opacity-50 blur-3xl"></div>
+        
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-6">Membuka Peluang Kemitraan & Penjualan</h2>
+            <p class="text-brand-100 text-lg mb-10 max-w-2xl mx-auto">
+                Kami siap bekerjasama dengan BUMDes, Supermarket, Restoran, maupun Agen Distributor untuk suplai hasil bumi berkualitas secara rutin.
+            </p>
+            <a href="https://wa.me/6281234567890" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 bg-green-500 hover:bg-green-400 text-white rounded-xl font-bold transition-all shadow-lg hover:shadow-xl">
+                <i data-lucide="message-circle" class="w-5 h-5"></i>
+                Diskusi via WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Kontak Section -->
+    <section id="kontak" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Info Kontak -->
+                <div>
+                    <h2 class="text-brand-600 font-bold tracking-wide uppercase text-sm mb-2">Hubungi Kami</h2>
+                    <h3 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-6">Mari Berkunjung ke Kebun Kami</h3>
+                    <p class="text-gray-600 mb-10">
+                        Pintu kami selalu terbuka untuk diskusi, pembelian produk, atau sekadar berbagi ilmu tentang pertanian. Silakan hubungi kami melalui kontak di bawah ini.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center flex-shrink-0 text-brand-600 border border-gray-100">
+                                <i data-lucide="map-pin"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-gray-900">Alamat Sekretariat</h4>
+                                <p class="text-gray-600">Jl. Ranu Wurung No. 45, Desa Ranu Wurung<br>Kecamatan Gading, Kab. Probolinggo, Jawa Timur</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center flex-shrink-0 text-brand-600 border border-gray-100">
+                                <i data-lucide="phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-gray-900">Telepon / WhatsApp</h4>
+                                <p class="text-gray-600">+62 812-3456-7890 (Bpk. Sudirman - Ketua)</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center flex-shrink-0 text-brand-600 border border-gray-100">
+                                <i data-lucide="mail"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-gray-900">Email</h4>
+                                <p class="text-gray-600">info@ranumakmur.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form / Maps Placeholder -->
+                <div class="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
+                    <h4 class="text-2xl font-bold text-gray-900 mb-6">Tinggalkan Pesan</h4>
+                    <form class="space-y-4" onsubmit="event.preventDefault(); alert('Terima kasih! Pesan Anda telah disimulasikan terkirim.');">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap</label>
+                            <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-shadow" placeholder="Masukkan nama Anda" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Nomor WhatsApp</label>
+                            <input type="tel" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-shadow" placeholder="08xx-xxxx-xxxx" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Pesan / Keperluan</label>
+                            <textarea rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-shadow" placeholder="Saya tertarik untuk membeli..." required></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-4 bg-brand-600 hover:bg-brand-700 text-white rounded-lg font-bold transition-colors">
+                            Kirim Pesan
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-brand-600 rounded flex items-center justify-center text-white">
+                        <i data-lucide="leaf" class="w-5 h-5"></i>
+                    </div>
+                    <span class="font-serif font-bold text-xl text-white">Ranu Makmur</span>
+                </div>
+                <div class="text-center md:text-left">
+                    <p>&copy; 2026 Kelompok Tani Ranu Makmur. Hak Cipta Dilindungi.</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-600 hover:text-white transition-colors">
+                        <i data-lucide="facebook" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-600 hover:text-white transition-colors">
+                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Inisialisasi Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.remove('bg-white/90');
+                navbar.classList.add('bg-white');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.add('bg-white/90');
+                navbar.classList.remove('bg-white');
+            }
+        });
+    </script>
+</body>
+</html>
